@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
 import styled from 'styled-components';
 import Context from './Context';
@@ -19,6 +20,10 @@ const Wrapper = styled.section`
 const Column = styled.div`
   flex: ${props => props.w || 1};
 `;
+
+Column.propTypes = {
+  w: PropTypes.number,
+}
 
 const Border = styled.div`
   flex: 100%;
@@ -182,7 +187,7 @@ class App extends Component {
             />
           </Column>
           <Border>
-            <p>💡You can see all metrics in the CLI <span>[npm run metrics]</span></p>
+            <p><span role="img" aria-label="idea">💡</span>You can see all metrics in the CLI <span>[npm run metrics]</span></p>
           </Border>
         </Wrapper>
       </Context.Provider>

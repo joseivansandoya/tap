@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Context from '../Context';
 import Title from './ui/Title';
 import Button from './ui/Button';
@@ -84,14 +85,14 @@ function Preview (props) {
               }
               {
                 contextValue.header === '3' &&
-                <a>And I am a link</a>
+                <a href="http://www.medium.com/" target="_blank" rel="noopener noreferrer">And I am a link to Medium</a>
               }
             </div>
 
             <div className='body' onClick={e => props.updateInteraction('body', e)}>
               {
                 (contextValue.body === '1' || contextValue.body === '2') &&
-                <img src="https://pbs.twimg.com/profile_banners/185953628/1534517599/1500x500" />
+                <img alt="" src="https://pbs.twimg.com/profile_banners/185953628/1534517599/1500x500" />
               }
               {
                 contextValue.body === '3' &&
@@ -113,7 +114,7 @@ function Preview (props) {
               }
               {
                 (contextValue.footer === '1' || contextValue.footer === '3') &&
-                <a>I am a link</a>
+                <a href="http://www.medium.com/" target="_blank" rel="noopener noreferrer">And I am a link to Medium</a>
               }
             </div>
           </div>
@@ -121,6 +122,10 @@ function Preview (props) {
       )}
     </Context.Consumer>
   )
+}
+
+Preview.propTypes = {
+  updateInteraction: PropTypes.func,
 }
 
 export default Preview;

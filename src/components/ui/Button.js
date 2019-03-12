@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ButtonInstance = styled.button`
   padding: 10px 30px;
@@ -22,6 +23,11 @@ function Button (props) {
   return (
     <ButtonInstance onClick={props.onClick}>{props.value}</ButtonInstance>
   )
+}
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  value: PropTypes.string,
 }
 
 export default Button;

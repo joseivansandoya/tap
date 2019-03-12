@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 const blessed = require('blessed');
-const fetch = require('node-fetch');
+const { getServerData, mapValueToName } = require('./utils');
 
 // print welcome message
 const welcome = `
@@ -106,37 +106,4 @@ async function printTable () {
   screen.append(table)
   screen.append(text)
   screen.render()
-}
-
-async function getServerData () {
-  const url = 'http://localhost:6006/';
-  try {
-    const response = await fetch (url);
-    return response.json();
-  }
-  catch (err) {
-    console.log('Error while fetching data', err);
-  }
-}
-
-function mapValueToName (section, value) {
-  const options = {
-    header: {
-      '1': 'Title H1',
-      '2': 'Title H2',
-      '3': 'Title H2 + Link'
-    },
-    body: {
-      '1': 'Image',
-      '2': 'Image + CTA',
-      '3': 'Paragraph + CTA'
-    },
-    footer: {
-      '1': 'Link',
-      '2': 'Paragraph',
-      '3': 'Paragraph + Link'
-    }
-  }
-
-  return options[section][value];
 }

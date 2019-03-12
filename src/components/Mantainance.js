@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Context from '../Context';
 import Title from './ui/Title';
 import Select from './ui/Select';
@@ -114,6 +115,12 @@ function Mantainance (props) {
       )}
     </Context.Consumer>
   )
+}
+
+Mantainance.propTypes = {
+  handleChange: PropTypes.func,
+  storeMantainance: PropTypes.func,
+  resetAll: PropTypes.func,
 }
 
 export default Mantainance;

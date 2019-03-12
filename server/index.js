@@ -23,7 +23,6 @@ app.post('/', async (req, res) => {
 app.put('/', async (req, res) => {
   const { body: data } = req;
   const updatedData = await updateData(data);
-  console.log('express updatedData', updatedData);
   res.send(updatedData);
 });
 

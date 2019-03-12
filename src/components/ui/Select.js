@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SelectLayout = styled.div`
   margin: 10px 0;
@@ -23,7 +24,7 @@ function Select (props) {
   return (
     <SelectLayout>
       <label htmlFor={id}>{label}</label>
-      <select id={id} onChange={e => onChange(props.id, e)} value={selectedValue}>
+      <select id={id} onChange={e => onChange(id, e)} value={selectedValue}>
         <option key={-1} value=''>- Choose one -</option>
         {
           options.map((item, index) => {
@@ -39,6 +40,14 @@ function Select (props) {
       </select>
     </SelectLayout>
   )
+}
+
+Select.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string,
+  selectedValue: PropTypes.string,
+  onChange: PropTypes.func,
+  options: PropTypes.array
 }
 
 export default Select;

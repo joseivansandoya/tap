@@ -18,11 +18,11 @@ const Wrapper = styled.section`
 `;
 
 const Column = styled.div`
-  flex: ${props => props.w || 1};
+  flex: ${props => props.w || '1'};
 `;
 
 Column.propTypes = {
-  w: PropTypes.number,
+  w: PropTypes.string,
 }
 
 const Border = styled.div`

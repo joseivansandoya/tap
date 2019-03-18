@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
+    "test": "jest --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "server": "PORT=6006 nodemon ./server --ignore '*.json'",
     "start:dev": "concurrently \"npm run server\" \"npm run start\"",
@@ -40,7 +40,10 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.5.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.0",
     "jest": "^24.5.0"
   }
 }

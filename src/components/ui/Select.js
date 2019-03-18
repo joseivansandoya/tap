@@ -30,7 +30,7 @@ function Select (props) {
           options.map((item, index) => {
             const {value, content} = item;
             return (
-              <option 
+              <option
                 key={index}
                 value={value}
               >{content}</option>

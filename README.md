@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TAP
+TAP is an experimental fullstack JavaScript project that attempts to use the last features of React framework, unit testing and some cool Node libraries like inquirer, chalk and blessed.
+For the frontend it has been used React.js
+For the backend it has been used Express
+image
 
-## Available Scripts
+## About
+This project will show you a simple web page with three main sections:
+1) Maintainance: here you can configure a simple mobile layout that will be shown in the Preview section.
+2) Preview: this section will show you the result of your maintainance configuration. In this preview you can interact with the Header, Body and Footer area of the mobile viewport and the system will keep a count of your interactions.
+3) Metrics: here you can see the interactions report of the last configuration you made.
 
-In the project directory, you can run:
+## Running project
+After clonning this project, please proceed to install it
+```
+npm install
+```
+Once installed you just have to run it in dev mode (since experimental I have activated Nodemon so you can see live logging 🤓)
+```
+npm run start:dev
+```
+Now what `start:dev` does is concurrently run two other scripts, which are `npm run server` (Express) and `npm run start` (CRA - React)
+Some unit tests are also available
+```
+npm t
+```
+### CLI script
+Metrics are also available in a CLI format!
+```
+npm run metrics
+```
+And you will be displayed an interface to view the metrics.
 
-### `npm start`
+## Architecture
+This is a simple fullstack project that is organized in the following way
+### Frontend
+It uses React 16.8 (via CRA - Create React Application) for the componetization structure, for the styles it uses Styled Components and for unit testing it uses Jest and Enzyme.
+Instead of using Redux and considering the small size of the project it was decided to use the new React Context API.
+Some unit tests are available, they were built using the Jest and Enzyme library.
+### Backend
+It mainly uses Next for deploying a simple web server.
+This project doesn't make use of any database so it emulate this process by interacting with a `data.json` file.
+Since frontend and backend must be running simultaneously it was used a libaray named `concurrently`.
+### CLI
+This is a pure Node implementation wich make use of some cool libraries like 
+- Inquirer: usesful for requesting input from the user in an easier way.
+- Chalk: used for stylizing some texts in the terminal.
+- Bessed: a cool library that lets you render tables, lists and some other interesting stuf.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+👍🏻 Thanks for looking at this experimental project, if you have doubts of comments please you can write me at: jisandoya@gmail.com

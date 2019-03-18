@@ -2,7 +2,7 @@
 TAP is an experimental fullstack JavaScript project that attempts to use the last features of React framework, unit testing and some cool Node libraries like inquirer, chalk and blessed.
 For the frontend it has been used React.js
 For the backend it has been used Express
-[Cover image](https://github.com/joseivansandoya/tap/blob/master/static/cover.jpg)
+![Cover image](https://github.com/joseivansandoya/tap/blob/master/static/cover.jpg)
 
 ## About ℹ️
 This project will show you a simple web page with three main sections:
